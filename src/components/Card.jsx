@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { delTodo, doneTodo, updateTodo } from "../redux/modules/todos";
+import Button from "./Button";
 
 function Card({ todo }) {
   const [edit, setEdit] = useState(false);
@@ -27,15 +28,15 @@ function Card({ todo }) {
             onChange={(e) => setDesc(e.target.value)}
           />
           <div>
-            <button
+            <Button
               onClick={(e) => {
                 dispatch(updateTodo(todo, updates));
                 setEdit(!edit);
               }}
             >
               수정완료
-            </button>
-            <button onClick={(e) => setEdit(!edit)}>취소</button>
+            </Button>
+            <Button onClick={(e) => setEdit(!edit)}>취소</Button>
           </div>
         </CardWrapper>
       ) : (
@@ -43,21 +44,21 @@ function Card({ todo }) {
           <h2>{todo.title}</h2>
           <p>{todo.desc}</p>
           <div>
-            <button onClick={(e) => setEdit(!edit)}>수정</button>
-            <button
+            <Button onClick={(e) => setEdit(!edit)}>수정</Button>
+            <Button
               onClick={(e) => {
                 dispatch(doneTodo(todo));
               }}
             >
               {todo.isDone ? "취소" : "완료"}
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={(e) => {
                 dispatch(delTodo(todo));
               }}
             >
               삭제
-            </button>
+            </Button>
           </div>
         </CardWrapper>
       )}

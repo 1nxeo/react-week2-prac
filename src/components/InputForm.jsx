@@ -28,7 +28,7 @@ function InputForm() {
           <StInput type="text" required ref={descRef} />
         </div>
         <div>
-          <input type="submit" required value="등록" />
+          <StSubmit type="submit" required value="등록" />
         </div>
       </FormWrapper>
     </>
@@ -47,6 +47,17 @@ const StInput = styled.input`
   height: 30px;
   border-radius: 10px;
   border: 1px solid;
+`;
+
+const StSubmit = styled.input`
+  width: 60px;
+  height: 20px;
+  background-color: aquamarine;
+  border: 1px transparent;
+  border-radius: 5px;
+  &:hover {
+    border: 1px solid darkblue;
+  }
 `;
 
 export default InputForm;

@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
         max-width: 1200px;
         min-width: 800px;
         width: 100%;
+        margin: 0 auto;
     }
 
 `;

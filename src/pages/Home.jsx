@@ -37,4 +37,9 @@ function Home() {
   );
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export default Home;

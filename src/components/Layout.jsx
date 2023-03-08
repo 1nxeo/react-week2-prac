@@ -19,7 +19,6 @@ function Layout({ children }) {
 //   display: flex;
 //   flex-direction: column;
 // `;
-
 const StHeader = styled.div`
   background-color: blueviolet;
   width: 100%;

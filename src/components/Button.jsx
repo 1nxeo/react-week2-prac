@@ -6,12 +6,12 @@ function Button({ children, ...rest }) {
 }
 
 const StBtn = styled.button`
-  width: 60px;
+  width: 50px;
   height: 20px;
   background-color: pink;
   border: 1px transparent;
   border-radius: 5px;
-  margin: 5px;
+  margin: 2px;
   &:hover {
     border: 1px solid deeppink;
   }

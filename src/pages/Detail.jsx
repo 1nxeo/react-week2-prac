@@ -1,18 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import Button from "../components/Button";
 
 function Detail() {
   const navigate = useNavigate();
+  const todo = useSelector((state) => state.todos);
+  const param = useParams();
+  const foundData = todo.find((item) => {
+    return item.id === Number(param.id);
+  });
+
   return (
     <>
-      Detail
-      <button
+      <h3>{foundData.id}</h3>
+      <h1>{foundData.title}</h1>
+      <p>{foundData.desc}</p>
+      <Button
         onClick={() => {
           navigate("/");
         }}
       >
-        to Home
-      </button>
+        홈으로
+      </Button>
     </>
   );
 }

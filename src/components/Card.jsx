@@ -1,10 +1,12 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { delTodo, doneTodo, updateTodo } from "../redux/modules/todos";
 import Button from "./Button";
 
 function Card({ todo }) {
+  const navigate = useNavigate();
   const [edit, setEdit] = useState(false);
   // const titleRef = useRef(`${todo.title}`);
   // const descRef = useRef(`${todo.desc}`);
@@ -58,6 +60,13 @@ function Card({ todo }) {
               }}
             >
               삭제
+            </Button>
+            <Button
+              onClick={(e) => {
+                navigate(`/detail/${+todo.id}`);
+              }}
+            >
+              상세
             </Button>
           </div>
         </CardWrapper>
